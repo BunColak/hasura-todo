@@ -1,14 +1,10 @@
 import React from 'react'
+import TodoInput from '../../components/TodoInput'
 
 const Home = () => {
   return (
-    <div>
-      <form>
-        <div>
-          <label>Enter a todo</label>
-          <input type="text" name="" id="" />
-        </div>
-      </form>
+    <div className="w-1/4">
+      <TodoInput />
     </div>
   )
 }
