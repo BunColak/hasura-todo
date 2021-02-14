@@ -20,7 +20,7 @@ const Login = () => {
     <div className="text-center">
       <h2 className="text-3xl">You need to login son.</h2>
       <button
-        className="w-full py-2 mt-4 transition-all duration-100 bg-green-600 rounded-sm hover:shadow-sm active:bg-green-700"
+        className="w-full mt-4 button"
         onClick={() => loginWithRedirect()}
       >
         Login

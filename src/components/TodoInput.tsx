@@ -25,7 +25,7 @@ const TodoInput = ({ refetchTodos }: Props) => {
   }
 
   return (
-    <form onSubmit={onSubmit} className="w-full">
+    <form onSubmit={onSubmit} className="flex items-center w-full">
       <div className="relative w-full">
         <input
           className="z-10 w-full p-4 text-2xl text-gray-700 placeholder-gray-400 rounded-sm"
@@ -37,6 +37,7 @@ const TodoInput = ({ refetchTodos }: Props) => {
         />
         <label className="hidden">Enter a todo...</label>
       </div>
+      <button type="submit" className="w-32 h-full py-6 ml-4 button">Add</button>
     </form>
   )
 }
