@@ -4,13 +4,17 @@ import { useHistory } from 'react-router-dom'
 
 const Login = () => {
   const history = useHistory()
-  const { loginWithRedirect, isAuthenticated } = useAuth0()
+  const { loginWithRedirect, isAuthenticated, isLoading } = useAuth0()
 
   useEffect(() => {
     if (isAuthenticated) {
       history.push('/')
     }
   }, [isAuthenticated])
+
+  if (isLoading) {
+    return <div>Loading....</div>
+  }
 
   return (
     <div className="text-center">
