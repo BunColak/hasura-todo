@@ -19,9 +19,11 @@ const TodoInput = ({ refetchTodos }: Props) => {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setInput('')
-    await addTodo({ variables: { title: input } })
-    refetchTodos()
+    if (input) {
+      setInput('')
+      await addTodo({ variables: { title: input } })
+      refetchTodos()
+    }
   }
 
   return (
@@ -37,7 +39,7 @@ const TodoInput = ({ refetchTodos }: Props) => {
         />
         <label className="hidden">Enter a todo...</label>
       </div>
-      <button type="submit" className="w-32 h-full py-6 ml-4 button">Add</button>
+      <button type="submit" className="w-32 h-full py-6 ml-4 button" disabled={!input}>Add</button>
     </form>
   )
 }
